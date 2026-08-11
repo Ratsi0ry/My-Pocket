@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "personne")
@@ -30,7 +31,18 @@ public class Personne {
     private Tarif tarif;
 
 
+    public Personne getPersonneById(String im) {
+        return null;
+    }
 
+    public void deletePersonne(String im) {
+    }
 
+    public Personne savePersonne(Personne personne) {
+        return personne;
+    }
 
+    public List<Personne> getAllPersonnes() {
+        return List.of();
+    }
 }

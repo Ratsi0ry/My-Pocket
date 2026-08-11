@@ -13,200 +13,25 @@ public class PersonneService {
     @Autowired
     private PersonneRepository personneRepository;
 
-    //renvoyer touts
-    public List<Personne> getAllPersonne(){
+    //renvoyer touts les personnes
+    public List<Personne> getAllPersonnes() {
         return personneRepository.findAll();
     }
 
     //renvoyer l'IM
-    public Personne getPersonneById(String im){
+    public Personne getPersonneById(String im) {
         Optional<Personne> personne = personneRepository.findById(im);
         return personne.orElse(null);
     }
 
     //enregistrer || modifier
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public Personne savePersonne(Personne personne) {
+        return personneRepository.save(personne);
+    }
+
+    // suppression
+    public void deletePersonne(String im) {
+        personneRepository.deleteById(im);
+    }
 
 }
