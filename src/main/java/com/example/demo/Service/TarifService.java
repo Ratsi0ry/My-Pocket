@@ -21,6 +21,4 @@ public class TarifService {
     public Tarif saveTarif(Tarif tarif){
         return tarifRepository.save(tarif);
     }
-
-
 }
