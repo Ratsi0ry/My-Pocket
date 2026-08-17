@@ -15,34 +15,27 @@ import java.util.List;
 @AllArgsConstructor
 public class Personne {
     @Id
-    private String IM;
+    private String im;
 
-    private String nom, prenom, contact;
+    private String nom;
 
+    private String prenom;
+
+    private String contact;
+
+    @Column(name = "datenais")
     private LocalDate dateNais;
 
     private Boolean statut = true;
 
+    @Column(name = "situation")
     private String situation;
 
     //FK
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_numtarif", referencedColumnName = "numtarif")
     private Tarif tarif;
 
-
-    public Personne getPersonneById(String im) {
-        return null;
-    }
-
-    public void deletePersonne(String im) {
-    }
-
-    public Personne savePersonne(Personne personne) {
-        return personne;
-    }
-
-    public List<Personne> getAllPersonnes() {
-        return List.of();
-    }
+    @OneToMany(mappedBy = "personne", cascade = CascadeType.ALL)
+    private List<Conjoint> conjoints;
 }

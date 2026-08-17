@@ -18,7 +18,7 @@ public class ConjointController {
         return conjointService.getTheConjoint();
     }
 
-    @GetMapping("/{numPension}")
+    @GetMapping("/{numpension}")
     public Conjoint getConjointById(@PathVariable String numPension){
         return conjointService.getConjointById(numPension);
     }
@@ -28,7 +28,7 @@ public class ConjointController {
         return conjointService.saveConjoint(conjoint);
     }
 
-    @DeleteMapping("/{numPension}")
+    @DeleteMapping("/{numpension}")
     public void deleteConjoint(@PathVariable String numPension) {
         conjointService.deleteConjoint(numPension);
     }

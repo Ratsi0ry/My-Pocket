@@ -12,17 +12,20 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Payer {
+
     @Id
-    @Column(name = "date_paiement")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "date_paiement", nullable = false)
     private LocalDateTime datePaiement;
 
-    @ManyToOne
-    @JoinColumn(name="fk_numTarif", referencedColumnName = "numTarif")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fk_numtarif", referencedColumnName = "numtarif")
     private Tarif tarif;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_im", referencedColumnName = "im")
     private Personne personne;
 }

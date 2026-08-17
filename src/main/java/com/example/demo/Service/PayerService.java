@@ -15,7 +15,7 @@ public class PayerService {
     public List<Payer> getAllPayers(){return payerRepository.findAll();}
 
     public Payer getPayerById(Integer id){
-        return payerRepository.findById(String.valueOf(id)).orElse(null);
+        return payerRepository.findById(Long.valueOf(id)).orElse(null);
     }
 
     public Payer savePayer(Payer payer){
@@ -23,7 +23,7 @@ public class PayerService {
     }
 
     public void deletePayer(Integer id){
-        payerRepository.deleteById(String.valueOf(id));
+        payerRepository.deleteById(Long.valueOf(id));
     }
 
 }
