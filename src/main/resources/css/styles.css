@@ -1,0 +1,181 @@
+/* ===================== STYLES GLOBAUX ===================== */
+* {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.root {
+    -fx-background-color: #f5f5f5;
+}
+
+/* ===================== BARRE LATÉRALE ===================== */
+.sidebar {
+    -fx-background-color: #5A0022;
+    -fx-padding: 20px 10px 20px 10px;
+}
+
+.sidebar .label {
+    -fx-text-fill: #ecf0f1;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.sidebar .button {
+    -fx-padding: 10px 15px;
+    -fx-background-color: #34495e;
+    -fx-text-fill: #ecf0f1;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.sidebar .button:hover {
+    -fx-background-color: #3d5a80;
+}
+
+.sidebar .button:pressed {
+    -fx-background-color: #2c3e50;
+}
+
+/* ===================== BOUTONS ===================== */
+.button {
+    -fx-padding: 10px 20px;
+    -fx-font-size: 12px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.button:default {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.button:default:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button:default:pressed {
+    -fx-background-color: #1f618d;
+}
+
+.button-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+.button-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+.button-success {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+}
+
+.button-success:hover {
+    -fx-background-color: #229954;
+}
+
+.button-secondary {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+/* ===================== CHAMPS DE TEXTE ===================== */
+.text-field, .text-area {
+    -fx-font-size: 12px;
+    -fx-padding: 8px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+/* ===================== LABELS ===================== */
+.label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 12px;
+}
+
+.label-header {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* ===================== TABLEAU ===================== */
+.table-view {
+    -fx-font-size: 11px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-padding: 8px;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* ===================== SÉPARATEUR ===================== */
+.separator {
+    -fx-padding: 8px 0px;
+}
+
+/* ===================== BOÎTE DE DIALOGUE ===================== */
+.dialog-pane {
+    -fx-background-color: #ecf0f1;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #34495e;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* ===================== VBOX ET HBOX ===================== */
+.vbox, .hbox {
+    -fx-spacing: 10px;
+}
+
+/* ===================== COMBO BOX ===================== */
+.combo-box {
+    -fx-font-size: 12px;
+    -fx-padding: 8px;
+}
+
+.combo-box-popup .list-cell {
+    -fx-padding: 8px;
+}
+
+/* ===================== DATE PICKER ===================== */
+.date-picker {
+    -fx-font-size: 12px;
+}
+
+/* ===================== CHARTS ===================== */
+.chart {
+    -fx-legend-visible: true;
+}
+
+.chart-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.projet7.controller.ListePaiementsController"
+            prefHeight="600.0" prefWidth="850.0">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="15" right="15" bottom="10" left="15"/>
+            </padding>
+
+            <Label text="Liste des paiements de pension">
+                <font>
+                    <Font name="System Bold" size="20.0"/>
+                </font>
+            </Label>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Du :"/>
+                <DatePicker fx:id="dpDateDebut"/>
+                <Label text="Au :"/>
+                <DatePicker fx:id="dpDateFin"/>
+                <Button fx:id="btnFiltrer" text="Filtrer" onAction="#onFiltrer"/>
+                <Button fx:id="btnReinitialiser" text="Réinitialiser" onAction="#onReinitialiser"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button fx:id="btnNouveauPaiement" text="Nouveau paiement" onAction="#onNouveauPaiement"/>
+                <Button fx:id="btnGenererRecu" text="Générer reçu (PDF)" onAction="#onGenererRecu"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tablePaiements">
+            <columns>
+                <TableColumn fx:id="colIM" text="IM" prefWidth="90">
+                    <cellValueFactory><PropertyValueFactory property="im"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colNomPrenoms" text="Nom et Prénoms" prefWidth="200">
+                    <cellValueFactory><PropertyValueFactory property="nomPrenoms"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colNumTarif" text="N° Tarif" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="numTarif"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colMontant" text="Montant (Ar)" prefWidth="120">
+                    <cellValueFactory><PropertyValueFactory property="montant"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colDate" text="Date de paiement" prefWidth="150">
+                    <cellValueFactory><PropertyValueFactory property="date"/></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" right="15" bottom="15" left="15"/>
+            </padding>
+            <Label fx:id="lblTotal" text="Nombre de paiements : 0    |    Montant total : 0 Ar"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.projet7.controller.ListePensionnairesController"
+            prefHeight="600.0" prefWidth="950.0">
+
+    <!-- ===================== HAUT : Titre + Recherche ===================== -->
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="15" right="15" bottom="10" left="15"/>
+            </padding>
+
+            <Label text="Liste des pensionnaires">
+                <font>
+                    <Font name="System Bold" size="20.0"/>
+                </font>
+            </Label>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Rechercher (nom ou numéro IM) :"/>
+                <TextField fx:id="txtRecherche" promptText="Nom ou IM..." prefWidth="220"/>
+                <Button fx:id="btnRechercher" text="Rechercher" onAction="#onRechercher"/>
+                <Button fx:id="btnReinitialiser" text="Réinitialiser" onAction="#onReinitialiser"/>
+
+                <Label text="Statut :"/>
+                <ComboBox fx:id="cbStatut" promptText="Tous" prefWidth="120"
+                          onAction="#onFiltrerStatut"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button fx:id="btnAjouter" text="Ajouter" onAction="#onAjouter"/>
+                <Button fx:id="btnActualiser" text="Actualiser" onAction="#onActualiser"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- ===================== CENTRE : TableView ===================== -->
+    <center>
+        <TableView fx:id="tablePersonnes">
+            <columns>
+                <TableColumn fx:id="colIM" text="IM" prefWidth="80">
+                    <cellValueFactory><PropertyValueFactory property="im"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colNom" text="Nom" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="nom"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colPrenoms" text="Prénoms" prefWidth="120">
+                    <cellValueFactory><PropertyValueFactory property="prenoms"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colDateNais" text="Date de naissance" prefWidth="120">
+                    <cellValueFactory><PropertyValueFactory property="datenais"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colDiplome" text="Diplôme" prefWidth="80">
+                    <cellValueFactory><PropertyValueFactory property="diplome"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colContact" text="Contact" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="contact"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colStatut" text="Statut" prefWidth="80">
+                    <cellValueFactory><PropertyValueFactory property="statut"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colSituation" text="Situation" prefWidth="90">
+                    <cellValueFactory><PropertyValueFactory property="situation"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colNomConjoint" text="Nom conjoint" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="nomConjoint"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colPrenomConjoint" text="Prénom conjoint" prefWidth="110">
+                    <cellValueFactory><PropertyValueFactory property="prenomConjoint"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colActions" text="Actions" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- ===================== BAS : Effectif total ===================== -->
+    <bottom>
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" right="15" bottom="15" left="15"/>
+            </padding>
+            <Label fx:id="lblEffectifTotal" text="Effectif total : 0"/>
+            <Label fx:id="lblVivants" text="Vivants : 0"/>
+            <Label fx:id="lblDecedes" text="Décédés : 0"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.projet7.controller.MainMenuController"
+            prefHeight="650.0" prefWidth="1000.0">
+
+    <!-- ===================== MENU LATERAL ===================== -->
+    <left>
+        <VBox spacing="8" prefWidth="220" styleClass="sidebar">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+
+            <Label text="My Pocket">
+                <font>
+                    <Font name="System Bold" size="16.0"/>
+                </font>
+            </Label>
+            <Separator/>
+
+            <Button fx:id="btnPersonnes" text="Pensionnaires" maxWidth="Infinity" onAction="#onAfficherPersonnes"/>
+            <Button fx:id="btnTarifs" text="Tarifs" maxWidth="Infinity" onAction="#onAfficherTarifs"/>
+            <Button fx:id="btnPaiements" text="Paiements" maxWidth="Infinity" onAction="#onAfficherPaiements"/>
+            <Button fx:id="btnStatistiques" text="Statistiques" maxWidth="Infinity" onAction="#onAfficherStatistiques"/>
+
+            <Separator/>
+        </VBox>
+    </left>
+
+    <!-- ===================== ZONE DE CONTENU DYNAMIQUE ===================== -->
+    <center>
+        <StackPane fx:id="contentArea">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            <Label text="Bienvenue dans l'application de gestion des pensions des retraités."/>
+        </StackPane>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.projet7.controller.DeclarerDecesController"
+      spacing="15" prefWidth="420.0">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Déclaration de décès">
+        <font>
+            <Font name="System Bold" size="18.0"/>
+        </font>
+    </Label>
+
+    <Label fx:id="lblPersonne" text="Pensionnaire : IM - Nom Prénoms" wrapText="true"/>
+    <DatePicker fx:id="dpDateDeces" promptText="Date de décès"/>
+
+    <Separator/>
+
+    <Label text="Transfert au conjoint (40% du montant)">
+        <font>
+            <Font name="System Bold" size="14.0"/>
+        </font>
+    </Label>
+
+    <GridPane hgap="10" vgap="12">
+        <columnConstraints>
+            <ColumnConstraints minWidth="140"/>
+            <ColumnConstraints minWidth="220" hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Nom du conjoint :" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtNomConjoint" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Prénom du conjoint :" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtPrenomConjoint" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Montant initial (Ar) :" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtMontantInitial" editable="false" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Montant conjoint (40%) :" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtMontantConjoint" editable="false" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Label fx:id="lblErreur" textFill="RED" wrapText="true"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="btnAnnuler" text="Annuler" onAction="#onAnnuler"/>
+        <Button fx:id="btnConfirmer" text="Confirmer le décès" onAction="#onConfirmer" defaultButton="true"/>
+    </HBox>
+
+</VBox>
