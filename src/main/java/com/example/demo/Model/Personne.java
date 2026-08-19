@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.List;
-
 @Entity
 @Table(name = "personne")
 @NoArgsConstructor
@@ -17,6 +15,7 @@ public class Personne {
 
     private String nom;
 
+    @Column(name = "prenoms")
     private String prenom;
 
     private String contact;
@@ -31,7 +30,7 @@ public class Personne {
 
     //FK
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_numtarif", referencedColumnName = "numtarif")
+    @JoinColumn(name = "fk_numtarif", referencedColumnName = "num_tarif")
     private Tarif tarif;
 
     @OneToOne(mappedBy = "personne", cascade = CascadeType.ALL)

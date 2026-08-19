@@ -83,11 +83,12 @@ public class DeclarerDecesController {
             }
 
             try (PreparedStatement psConjoint = conn.prepareStatement(
-                    "INSERT INTO conjoint (numpension, nomconjoint, prenomconjoint, montant) VALUES (?, ?, ?, ?)")) {
+                    "INSERT INTO conjoint (numpension, nomconjoint, prenomconjoint, montant, im) VALUES (?, ?, ?, ?, ?)")) {
                 psConjoint.setString(1, personne.getIm());
                 psConjoint.setString(2, txtNomConjoint.getText().trim());
                 psConjoint.setString(3, txtPrenomConjoint.getText().trim());
                 psConjoint.setInt(4, montantConjoint);
+                psConjoint.setString(5, personne.getIm());
                 psConjoint.executeUpdate();
             }
 

@@ -64,11 +64,11 @@
 }
 
 .button-danger:hover {
-    -fx-background-color: #555555;
+    -fx-background-color: #780033;
 }
 
 .button-success {
-    -fx-background-color: #27ae60;
+    -fx-background-color: #780033;
     -fx-text-fill: white;
 }
 
@@ -77,12 +77,12 @@
 }
 
 .button-secondary {
-    -fx-background-color: #95a5a6;
+    -fx-background-color: #780033;
     -fx-text-fill: white;
 }
 
 .button-secondary:hover {
-    -fx-background-color: #7f8c8d;
+    -fx-background-color: #2C0011;
 }
 
 /* ===================== CHAMPS DE TEXTE ===================== */
@@ -108,7 +108,7 @@
 .label-header {
     -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-text-fill: #2c3e50;
+    -fx-text-fill: #FFFFFF;
 }
 
 /* ===================== TABLEAU ===================== */

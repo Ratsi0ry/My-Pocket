@@ -32,7 +32,7 @@
 
             <HBox spacing="10" alignment="CENTER_LEFT">
                 <Label text="Rechercher (diplôme ou n° tarif) :"/>
-                <TextField fx:id="txtRecherche" promptText="Diplôme ou num_tarif..." prefWidth="220"/>
+                <TextField fx:id="txtRecherche" promptText="Diplôme ou numTarif..." prefWidth="220"/>
                 <Button fx:id="btnRechercher" text="Rechercher" onAction="#onRechercher"/>
                 <Button fx:id="btnReinitialiser" text="Réinitialiser" onAction="#onReinitialiser"/>
 

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class Tarif {
 
     @Id
-    @Column(name = "numtarif")
+    @Column(name = "num_tarif")
     private String numTarif;
 
     private String diplome;

@@ -19,17 +19,20 @@ public class Conjoint {
     @Column(name = "numpension", nullable = false, unique = true)
     private String numPension;
 
+    @Column(name = "nomconjoint")
     private String nomConjoint;
 
+    @Column(name = "prenomconjoint")
     private String prenomConjoint;
 
     private Integer montant;
 
+    @Column(name = "statutconjoint")
     private Boolean statutConjoint = true;
 
     @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_im", referencedColumnName = "im", unique = true)
+    @JoinColumn(name = "im", referencedColumnName = "im", unique = true)
     private Personne personne;
 
     // Getters

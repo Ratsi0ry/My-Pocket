@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "payer")
@@ -16,15 +16,15 @@ public class Payer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "date_paiement", nullable = false)
-    private LocalDateTime datePaiement;
+    @Column(name = "date", nullable = false)
+    private LocalDate datePaiement;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_numtarif", referencedColumnName = "numtarif")
+    @JoinColumn(name = "num_tarif", referencedColumnName = "num_tarif")
     private Tarif tarif;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_im", referencedColumnName = "im")
+    @JoinColumn(name = "im", referencedColumnName = "im")
     private Personne personne;
 
     //getters
@@ -32,7 +32,7 @@ public class Payer {
         return id;
     }
 
-    public LocalDateTime getDatePaiement(){
+    public LocalDate getDatePaiement(){
         return datePaiement;
     }
 
@@ -49,7 +49,7 @@ public class Payer {
         this.id = i;
     }
 
-    public void setDatePaiement(LocalDateTime l){
+    public void setDatePaiement(LocalDate l){
         this.datePaiement = l;
     }
 
