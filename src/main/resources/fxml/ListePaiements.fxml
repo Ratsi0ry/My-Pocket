@@ -6,7 +6,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
@@ -35,13 +38,13 @@
                 <DatePicker fx:id="dpDateDebut"/>
                 <Label text="Au :"/>
                 <DatePicker fx:id="dpDateFin"/>
-                <Button fx:id="btnFiltrer" text="Filtrer" onAction="#onFiltrer"/>
-                <Button fx:id="btnReinitialiser" text="Réinitialiser" onAction="#onReinitialiser"/>
+                <Button fx:id="btnFiltrer" onAction="#onFiltrer"><graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/actualiser-32.png"/></image></ImageView></graphic><tooltip><Tooltip text="Filtrer"/></tooltip></Button>
+                <Button fx:id="btnReinitialiser" onAction="#onReinitialiser"><graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/actualiser-32.png"/></image></ImageView></graphic><tooltip><Tooltip text="Réinitialiser"/></tooltip></Button>
 
                 <Region HBox.hgrow="ALWAYS"/>
 
-                <Button fx:id="btnNouveauPaiement" text="Nouveau paiement" onAction="#onNouveauPaiement"/>
-                <Button fx:id="btnGenererRecu" text="Générer reçu (PDF)" onAction="#onGenererRecu"/>
+                <Button fx:id="btnNouveauPaiement" onAction="#onNouveauPaiement"><graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/payer-48.png"/></image></ImageView></graphic><tooltip><Tooltip text="Nouveau paiement"/></tooltip></Button>
+                <Button fx:id="btnGenererRecu" onAction="#onGenererRecu"><graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/payer-48.png"/></image></ImageView></graphic><tooltip><Tooltip text="Générer reçu (PDF)"/></tooltip></Button>
             </HBox>
         </VBox>
     </top>

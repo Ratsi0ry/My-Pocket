@@ -5,6 +5,9 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -70,8 +73,8 @@
     <Label fx:id="lblErreur" textFill="RED" wrapText="true"/>
 
     <HBox spacing="10" alignment="CENTER_RIGHT">
-        <Button fx:id="btnAnnuler" text="Annuler" onAction="#onAnnuler"/>
-        <Button fx:id="btnEnregistrer" text="Enregistrer" onAction="#onEnregistrer" defaultButton="true"/>
+        <Button fx:id="btnAnnuler" onAction="#onAnnuler"><graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/supprimer-50.png"/></image></ImageView></graphic><tooltip><Tooltip text="Annuler"/></tooltip></Button>
+        <Button fx:id="btnEnregistrer" onAction="#onEnregistrer" defaultButton="true"><graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/ajouter-50.png"/></image></ImageView></graphic><tooltip><Tooltip text="Enregistrer"/></tooltip></Button>
     </HBox>
 
 </VBox>

@@ -43,6 +43,7 @@
     -fx-background-radius: 4px;
     -fx-border-radius: 4px;
     -fx-cursor: hand;
+    -fx-background-color: #8A0033;
 }
 
 .button:default {

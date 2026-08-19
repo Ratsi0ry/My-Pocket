@@ -7,6 +7,8 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane xmlns="http://javafx.com/javafx/17"
@@ -28,10 +30,18 @@
             </Label>
             <Separator/>
 
-            <Button fx:id="btnPersonnes" text="Pensionnaires" maxWidth="Infinity" onAction="#onAfficherPersonnes"/>
-            <Button fx:id="btnTarifs" text="Tarifs" maxWidth="Infinity" onAction="#onAfficherTarifs"/>
-            <Button fx:id="btnPaiements" text="Paiements" maxWidth="Infinity" onAction="#onAfficherPaiements"/>
-            <Button fx:id="btnStatistiques" text="Statistiques" maxWidth="Infinity" onAction="#onAfficherStatistiques"/>
+            <Button fx:id="btnPersonnes" text="Pensionnaires" maxWidth="Infinity" onAction="#onAfficherPersonnes">
+                <graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/pensionnaire-32.png"/></image></ImageView></graphic>
+            </Button>
+            <Button fx:id="btnTarifs" text="Tarifs" maxWidth="Infinity" onAction="#onAfficherTarifs">
+                <graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/Tarif-64.png"/></image></ImageView></graphic>
+            </Button>
+            <Button fx:id="btnPaiements" text="Paiements" maxWidth="Infinity" onAction="#onAfficherPaiements">
+                <graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/payer-48.png"/></image></ImageView></graphic>
+            </Button>
+            <Button fx:id="btnStatistiques" text="Statistiques" maxWidth="Infinity" onAction="#onAfficherStatistiques">
+                <graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/statistique-64.png"/></image></ImageView></graphic>
+            </Button>
 
             <Separator/>
         </VBox>

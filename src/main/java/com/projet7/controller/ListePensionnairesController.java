@@ -23,6 +23,9 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -156,11 +159,22 @@ public class ListePensionnairesController {
         ouvrirFormulaire(null);
     }
 
+    private Button createIconButton(String imageName, String tooltipText) {
+        Button button = new Button();
+        ImageView imageView = new ImageView(new Image(
+                ListePensionnairesController.class.getResource("/Image/" + imageName).toExternalForm()));
+        imageView.setFitWidth(20);
+        imageView.setFitHeight(20);
+        button.setGraphic(imageView);
+        button.setTooltip(new Tooltip(tooltipText));
+        return button;
+    }
+
     private void ajouterColonneActions() {
         colActions.setCellFactory(col -> new TableCell<>() {
-            private final Button btnModifier = new Button("Modifier");
-            private final Button btnSupprimer = new Button("Supprimer");
-            private final Button btnDeces = new Button("Décès");
+            private final Button btnModifier = createIconButton("Modifier-50.png", "Modifier");
+            private final Button btnSupprimer = createIconButton("supprimer-50.png", "Supprimer");
+            private final Button btnDeces = createIconButton("pensionnaire-32.png", "Déclarer le décès");
             private final HBox box = new HBox(5, btnModifier, btnSupprimer, btnDeces);
 
             {

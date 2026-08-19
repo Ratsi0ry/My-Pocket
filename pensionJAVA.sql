@@ -117,3 +117,4 @@ CREATE INDEX IF NOT EXISTS idx_personne_fk_numtarif ON personne(fk_numtarif);
 CREATE INDEX IF NOT EXISTS idx_payer_num_tarif ON payer(num_tarif);
 CREATE INDEX IF NOT EXISTS idx_payer_im ON payer(im);
 CREATE INDEX IF NOT EXISTS idx_conjoint_im ON conjoint(im);
+
