@@ -10,26 +10,41 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/conjoint")
 public class ConjointController {
+
     @Autowired
     private ConjointService conjointService;
 
+    // GET all
     @GetMapping
-    public List<Conjoint> getTheConjoint(){
+    public List<Conjoint> getTheConjoint() {
         return conjointService.getTheConjoint();
     }
 
+    // GET by numPension
     @GetMapping("/{numpension}")
-    public Conjoint getConjointById(@PathVariable String numPension){
-        return conjointService.getConjointById(numPension);
+    public Conjoint getConjointByNumPension(
+            @PathVariable("numpension") String numPension) {
+        return conjointService.getConjointByNumPension(numPension);
     }
 
+    // POST
     @PostMapping
     public Conjoint lierConjoint(@RequestBody Conjoint conjoint) {
         return conjointService.saveConjoint(conjoint);
     }
 
+    // PUT
+    @PutMapping("/{numpension}")
+    public Conjoint updateConjointInfo(
+            @PathVariable("numpension") String numPension,
+            @RequestBody Conjoint conjoint) {
+        return conjointService.updateInfo(numPension, conjoint);
+    }
+
+    // DELETE by numPension
     @DeleteMapping("/{numpension}")
-    public void deleteConjoint(@PathVariable String numPension) {
-        conjointService.deleteConjoint(numPension);
+    public void deleteConjoint(
+            @PathVariable("numpension") String numPension) {
+        conjointService.deleteConjointByNumPension(numPension);
     }
 }

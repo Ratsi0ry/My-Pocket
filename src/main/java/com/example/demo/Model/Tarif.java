@@ -2,12 +2,10 @@ package com.example.demo.Model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tarif")
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Tarif {
@@ -21,4 +19,39 @@ public class Tarif {
     private String categorie;
 
     private Integer montant;
+
+    //getters
+    public String getNumTarif(){
+        return numTarif;
+    }
+
+    public String getDiplome(){
+        return diplome;
+    }
+
+    public String getCategorie(){
+        return categorie;
+    }
+
+    public Integer getMontant(){
+        return montant;
+    }
+
+    //setters
+    public void setNumTarif(String n){
+        this.numTarif = n;
+    }
+
+    public void setDiplome(String d){
+        this.diplome = d;
+    }
+
+    public void setCategorie(String c){
+        this.categorie = c;
+    }
+
+    public void setMontant(Integer m){
+        this.montant = m;
+    }
+
 }

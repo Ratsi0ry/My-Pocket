@@ -26,4 +26,17 @@ public class PayerService {
         payerRepository.deleteById(Long.valueOf(id));
     }
 
+    public Payer updatePaie(Long id, Payer payer) {
+        Payer existingPaie =payerRepository.findById(id).orElse(null);
+
+        if(existingPaie == null){
+            return null;
+        }
+
+        existingPaie.setDatePaiement(payer.getDatePaiement());
+        existingPaie.setTarif(payer.getTarif());
+        existingPaie.setPersonne(payer.getPersonne());
+
+        return payerRepository.save(existingPaie);
+    }
 }

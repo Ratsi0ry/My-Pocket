@@ -15,25 +15,33 @@ public class PersonneController {
     @Autowired
     private PersonneService personneService;
 
-    //all person
+    //GET
     @GetMapping
     public List<Personne> getAllPersonnes(){
         return personneService.getAllPersonnes();
     };
 
-    // get by id
+    //GET BY im
     @GetMapping("/{im}")
     public Personne getPersonneById(@PathVariable String im){
         return personneService.getPersonneById(im);
     }
 
-    //ajouter nouveau personne
+    //POST
     @PostMapping
     public Personne createPersonne(@RequestBody Personne personne){
         return personneService.savePersonne(personne);
     }
 
-    //delete
+    //PUT
+    @PutMapping("/{im}")
+    public Personne modifyPersonne(
+            @PathVariable("im") String im,
+            @RequestBody Personne personne){
+        return personneService.updatePersonne(im, personne);
+    }
+
+    //DELETE
     @DeleteMapping("/{im}")
     public void deletePersonne(@PathVariable String im){
         personneService.deletePersonne(im);

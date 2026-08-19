@@ -2,14 +2,12 @@ package com.example.demo.Model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "payer")
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Payer {
@@ -28,4 +26,38 @@ public class Payer {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_im", referencedColumnName = "im")
     private Personne personne;
+
+    //getters
+    public long getId (){
+        return id;
+    }
+
+    public LocalDateTime getDatePaiement(){
+        return datePaiement;
+    }
+
+    public Tarif getTarif(){
+        return tarif;
+    }
+
+    public Personne getPersonne(){
+        return personne;
+    }
+
+    //setters
+    public void setId(long i){
+        this.id = i;
+    }
+
+    public void setDatePaiement(LocalDateTime l){
+        this.datePaiement = l;
+    }
+
+    public void setTarif(Tarif tarif){
+        this.tarif = tarif;
+    }
+
+    public void setPersonne(Personne personne){
+        this.personne = personne;
+    }
 }
