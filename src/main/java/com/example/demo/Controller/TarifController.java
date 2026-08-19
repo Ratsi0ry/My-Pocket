@@ -13,6 +13,12 @@ public class TarifController {
     @Autowired
     private TarifService tarifService;
 
+    //GET by numtarif
+    @GetMapping("/{numtarif}")
+    public Tarif getTarifById(@PathVariable("numtarif") String numTarif){
+        return tarifService.getTarifById(numTarif);
+    }
+
     //GET
     @GetMapping
     public List<Tarif> getAllTartifs(){
@@ -23,6 +29,20 @@ public class TarifController {
     @PostMapping
     public Tarif createTarif(@RequestBody Tarif tarif){
         return tarifService.saveTarif(tarif);
+    }
+
+    //PUT
+    @PutMapping("/{numtarif}")
+    public Tarif upddateTarif(
+            @PathVariable("numtarif") String numTarif,
+            @RequestBody Tarif tarif){
+        return tarifService.updateTarif(numTarif, tarif);
+    }
+
+    //DELETE
+    @DeleteMapping("/{numtarif}")
+    public void deleteTarif(@PathVariable("numtarif") String numTarif) {
+        tarifService.deleteTarif(numTarif);
     }
 
 }
