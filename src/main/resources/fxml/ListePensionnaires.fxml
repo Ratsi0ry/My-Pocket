@@ -38,7 +38,7 @@
             <HBox spacing="10" alignment="CENTER_LEFT">
                 <Label text="Rechercher (nom ou numéro IM) :"/>
                 <TextField fx:id="txtRecherche" promptText="Nom ou IM..." prefWidth="220"/>
-                <Button fx:id="btnRechercher" onAction="#onRechercher"><graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/actualiser-32.png"/></image></ImageView></graphic><tooltip><Tooltip text="Rechercher"/></tooltip></Button>
+                <Button fx:id="btnRechercher" onAction="#onRechercher"><graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/recherche-48.png"/></image></ImageView></graphic><tooltip><Tooltip text="Rechercher"/></tooltip></Button>
                 <Button fx:id="btnReinitialiser" onAction="#onReinitialiser"><graphic><ImageView fitWidth="24" fitHeight="24"><image><Image url="@../Image/actualiser-32.png"/></image></ImageView></graphic><tooltip><Tooltip text="Réinitialiser"/></tooltip></Button>
 
                 <Label text="Statut :"/>
